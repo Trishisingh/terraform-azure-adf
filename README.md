@@ -21,15 +21,6 @@ Terraform backend
   - Blob storage container for the remote state management
 
 
-USAGE:
----
-
-To activate the terraform backend for running locally we need to initialise the SPN with env vars to ensure you are running the same way as the pipeline that will ultimately be running any incremental changes.
-
-```bash
-docker run -it --rm -v $(pwd):/opt/tf-lib amidostacks/ci-tf:latest /bin/bash
-```
-
 ```bash 
 export ARM_CLIENT_ID=xxxx \
 ARM_CLIENT_SECRET=yyyyy \
@@ -42,10 +33,9 @@ alternatively you can run `az login`
 To get up and running locally you will want to create  a `terraform.tfvars` file 
 ```bash
 TFVAR_CONTENTS='''
-vnet_id                 = "amido-stacks-vnet-uks-dev"
-rg_name                 = "amido-stacks-rg-uks-dev"
+rg_name                 = "rg-uks-dev"
 resource_group_location = "uksouth"
-name_company            = "amido"
+name_company            = "test"
 name_project            = "stacks"
 name_component          = "spa"
 name_environment        = "dev" 
@@ -90,7 +80,7 @@ No modules.
 | <a name="input_branch_name"></a> [branch\_name](#input\_branch\_name) | Specifies repository branch to use as the collaboration branch. | `string` | `"main"` | no |
 | <a name="input_create_adf"></a> [create\_adf](#input\_create\_adf) | Set value whether to create a Data Factory or not. | `bool` | `true` | no |
 | <a name="input_git_integration"></a> [git\_integration](#input\_git\_integration) | Integrate a git repository with ADF. Can be null, github or vsts (use vsts for Azure DevOps Repos). | `string` | `"null"` | no |
-| <a name="input_github_account_name"></a> [github\_account\_name](#input\_github\_account\_name) | Specifies the GitHub account name. | `string` | `"amido"` | no |
+| <a name="input_github_account_name"></a> [github\_account\_name](#input\_github\_account\_name) | Specifies the GitHub account name. | `string` | `"test"` | no |
 | <a name="input_github_url"></a> [github\_url](#input\_github\_url) | Specifies the GitHub Enterprise host name. For example: https://github.mydomain.com. Use https://github.com for open source repositories. | `string` | `"https://github.com"` | no |
 | <a name="input_global_parameter"></a> [global\_parameter](#input\_global\_parameter) | Specifies whether to add global parameters to ADF | <pre>list(object({<br>    name  = string<br>    type  = string<br>    value = string<br>  }))</pre> | <pre>[<br>  {<br>    "name": "environment",<br>    "type": "String",<br>    "value": "nonprod"<br>  }<br>]</pre> | no |
 | <a name="input_identity_ids"></a> [identity\_ids](#input\_identity\_ids) | Specifies a list of User Assigned Managed Identity IDs to be assigned to this Data Factory. | `list(string)` | `[]` | no |
@@ -104,8 +94,8 @@ No modules.
 | <a name="input_resource_namer"></a> [resource\_namer](#input\_resource\_namer) | User defined naming convention applied to all resources created as part of this module | `string` | n/a | yes |
 | <a name="input_resource_tags"></a> [resource\_tags](#input\_resource\_tags) | Map of tags to be applied to all resources created as part of this module | `map(string)` | `{}` | no |
 | <a name="input_root_folder"></a> [root\_folder](#input\_root\_folder) | Specifies the root folder within the repository. Set to / for the top level. | `string` | `"/adf_managed"` | no |
-| <a name="input_vsts_account_name"></a> [vsts\_account\_name](#input\_vsts\_account\_name) | Specifies the VSTS / Azure DevOps account name. | `string` | `"amido"` | no |
-| <a name="input_vsts_project_name"></a> [vsts\_project\_name](#input\_vsts\_project\_name) | Specifies the name of the VSTS / Azure DevOps project. | `string` | `"amido-stacks"` | no |
+| <a name="input_vsts_account_name"></a> [vsts\_account\_name](#input\_vsts\_account\_name) | Specifies the VSTS / Azure DevOps account name. | `string` | `"test"` | no |
+| <a name="input_vsts_project_name"></a> [vsts\_project\_name](#input\_vsts\_project\_name) | Specifies the name of the VSTS / Azure DevOps project. | `string` | `"test"` | no |
 
 ## Outputs
 
