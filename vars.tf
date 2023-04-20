@@ -140,7 +140,7 @@ variable "root_folder" {
 ##########################
 variable "github_account_name" {
   type        = string
-  default     = "amido"
+  default     = "test"
   description = "Specifies the GitHub account name."
 }
 
@@ -157,13 +157,13 @@ variable "github_url" {
 ##########################
 variable "vsts_account_name" {
   type        = string
-  default     = "amido"
+  default     = "test"
   description = "Specifies the VSTS / Azure DevOps account name."
 }
 
 
 variable "vsts_project_name" {
   type        = string
-  default     = "amido-stacks"
+  default     = "test-stacks"
   description = "Specifies the name of the VSTS / Azure DevOps project."
 }
