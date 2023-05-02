@@ -61,7 +61,8 @@ terraform init -backend-config=./backend.local.tfvars
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.51.0 |
 
-## Usage
+## Example Usage
+```hcl
 
 data "azurerm_client_config" "current" {}
 
@@ -92,7 +93,7 @@ module "adf" {
   resource_group_location = azurerm_resource_group.default.location
   git_integration         = var.git_integration
 }
-
+```
 
 
 ## Resources
