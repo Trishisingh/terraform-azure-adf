@@ -82,6 +82,7 @@ jobs:
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
         TF_VAR_resource_namer: "rishi"
         TF_VAR_resource_group_name: "datafactory"
+        TF_CLI_CONFIG_FILE: "./example"
 
    
          
@@ -100,6 +101,7 @@ jobs:
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
         TF_VAR_resource_namer: "rishi"
         TF_VAR_resource_group_name: "datafactory"
+        TF_CLI_CONFIG_FILE: "./example"
         
     
 
@@ -115,6 +117,7 @@ jobs:
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
         TF_VAR_resource_namer: "rishi"
         TF_VAR_resource_group_name: "datafactory"
+        TF_CLI_CONFIG_FILE: "./example"
         
 
   terraform-new:
@@ -148,6 +151,7 @@ jobs:
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
         TF_VAR_resource_namer: "rishi"
         TF_VAR_resource_group_name: "datafactory"
+        TF_CLI_CONFIG_FILE: "./example"
         
 
    
@@ -167,6 +171,7 @@ jobs:
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
         TF_VAR_resource_namer: "rishi"
         TF_VAR_resource_group_name: "datafactory"
+        TF_CLI_CONFIG_FILE: "./example"
         
     
 
@@ -181,3 +186,4 @@ jobs:
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
         TF_VAR_resource_namer: "rishi"
         TF_VAR_resource_group_name: "datafactory"
+        TF_CLI_CONFIG_FILE: "./example"
