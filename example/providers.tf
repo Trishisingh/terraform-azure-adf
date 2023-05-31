@@ -3,7 +3,7 @@ terraform {
     resource_group_name  = "tfstateresourcegroup"
     storage_account_name = "tfstate"
     container_name       = "tfstate"
-    key                  = "lates.terraform.tfstate"
+    key                  = "datafactory.terraform.tfstate"
   }
 }
 

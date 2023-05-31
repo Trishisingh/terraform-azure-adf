@@ -80,7 +80,8 @@ jobs:
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
         ARM_SUBSCRIPTION_ID: "${{ secrets.ARM_SUBSCRIPTION_ID }}"
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
-        
+        TF_VAR_resource_namer: "rishi"
+        TF_VAR_resource_group_name: "datafactory"
 
    
          
@@ -97,6 +98,8 @@ jobs:
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
         ARM_SUBSCRIPTION_ID: "${{ secrets.ARM_SUBSCRIPTION_ID }}"
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
+        TF_VAR_resource_namer: "rishi"
+        TF_VAR_resource_group_name: "datafactory"
         
     
 
@@ -110,6 +113,8 @@ jobs:
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
         ARM_SUBSCRIPTION_ID: "${{ secrets.ARM_SUBSCRIPTION_ID }}"
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
+        TF_VAR_resource_namer: "rishi"
+        TF_VAR_resource_group_name: "datafactory"
         
 
   terraform-new:
@@ -141,6 +146,8 @@ jobs:
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
         ARM_SUBSCRIPTION_ID: "${{ secrets.ARM_SUBSCRIPTION_ID }}"
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
+        TF_VAR_resource_namer: "rishi"
+        TF_VAR_resource_group_name: "datafactory"
         
 
    
@@ -158,6 +165,8 @@ jobs:
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
         ARM_SUBSCRIPTION_ID: "${{ secrets.ARM_SUBSCRIPTION_ID }}"
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
+        TF_VAR_resource_namer: "rishi"
+        TF_VAR_resource_group_name: "datafactory"
         
     
 
@@ -170,3 +179,5 @@ jobs:
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
         ARM_SUBSCRIPTION_ID: "${{ secrets.ARM_SUBSCRIPTION_ID }}"
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
+        TF_VAR_resource_namer: "rishi"
+        TF_VAR_resource_group_name: "datafactory"
