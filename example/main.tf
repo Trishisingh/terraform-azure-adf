@@ -21,9 +21,13 @@ resource "azurerm_resource_group" "default" {
 }
 
 module "adf" {
-  source                  = "../../azurerm-adf"
-  resource_namer          = module.default_label.id
-  resource_group_name     = azurerm_resource_group.default.name
-  resource_group_location = azurerm_resource_group.default.location
-  git_integration         = var.git_integration
+  source                          = "git::https://github.com/Trishisingh/terraform-azure-datafactory/?ref=master"
+  resource_namer                  = module.default_label.id
+  resource_group_name             = azurerm_resource_group.default.name
+  resource_group_location         = azurerm_resource_group.default.location
+  git_integration                 = var.git_integration
+  resource_tags                   = module.default_label.tags
+  repository_name                 = var.repository_name
+  root_folder                     = var.root_folder
+  managed_virtual_network_enabled = var.managed_virtual_network_enabled
 }
