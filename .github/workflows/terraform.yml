@@ -62,7 +62,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: "${{ env.tf_actions_working_dir }}"
         
 
 
@@ -78,6 +77,7 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
+      working-directory: ${{ env.tf_actions_working_dir }}
       env:
         ARM_CLIENT_ID: "${{ secrets.ARM_CLIENT_ID }}"
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
@@ -96,6 +96,7 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
+      working-directory: ${{ env.tf_actions_working_dir }}
       env:
         ARM_CLIENT_ID: "${{ secrets.ARM_CLIENT_ID }}"
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
@@ -111,6 +112,7 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
+      working-directory: ${{ env.tf_actions_working_dir }}
       env:
         ARM_CLIENT_ID: "${{ secrets.ARM_CLIENT_ID }}"
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
@@ -144,6 +146,7 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
+      working-directory: ${{ env.tf_actions_working_dir }}
       env:
         ARM_CLIENT_ID: "${{ secrets.ARM_CLIENT_ID }}"
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
@@ -163,6 +166,7 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
+      working-directory: ${{ env.tf_actions_working_dir }}
       env:
         ARM_CLIENT_ID: "${{ secrets.ARM_CLIENT_ID }}"
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
@@ -177,6 +181,7 @@ jobs:
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
       run: terraform apply -auto-approve -input=false
+      working-directory: ${{ env.tf_actions_working_dir }}
       env:
         ARM_CLIENT_ID: "${{ secrets.ARM_CLIENT_ID }}"
         ARM_CLIENT_SECRET: "${{ secrets.ARM_CLIENT_SECRET }}"
@@ -184,3 +189,4 @@ jobs:
         ARM_TENANT_ID: "${{  secrets.ARM_TENANT_ID }}"
         TF_VAR_resource_namer: "rishi"
         TF_VAR_resource_group_name: "datafactory"
+        TF_CLI_CONFIG_FILE: "./example"
