@@ -1,6 +1,9 @@
 <!-- BEGIN_TF_DOCS -->
 # PROJECT_NAME
 
+
+[![Terraform](https://github.com/Trishisingh/terraform-azure-datafactory/actions/workflows/terraform.yml/badge.svg)](https://github.com/Trishisingh/terraform-azure-datafactory/actions/workflows/terraform.yml)
+
 DESCRIPTION:
 ---
 
