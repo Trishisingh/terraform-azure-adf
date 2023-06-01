@@ -10,7 +10,3 @@ terraform {
 provider "azurerm" {
   features {}
 }
-
-
-#### this should be removed from parent module
-s
