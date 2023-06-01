@@ -131,7 +131,7 @@ variable "git_integration" {
 
 variable "repository_name" {
   type        = string
-  default     = "stacks-data-infrastructure"
+  default     = "test"
   description = "Specifies the name of the git repository."
 }
 variable "branch_name" {
